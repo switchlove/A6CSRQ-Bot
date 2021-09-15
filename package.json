@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"description": "A6CSRQ Discord Bot",
 	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
 	"engines": {
 		"node": "16.8.0",
 		"npm": "7.23.0"
