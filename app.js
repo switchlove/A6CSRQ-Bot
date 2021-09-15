@@ -376,6 +376,10 @@
 				var loca = args1[0];
 				var userID = message.member.id;
 				
+				console.log(arg);
+				console.log(loca);
+				console.log(userID);
+				
 				await playerData.loadCells('A2:B999');
 				for (let x = 0; x < playerData._cells.length; x++) {
 					if (playerData._cells[x] != undefined) {
