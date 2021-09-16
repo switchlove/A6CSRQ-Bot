@@ -351,6 +351,7 @@
 							}
 						}
 					}
+					await a6csrqSheet.loadCells('B2:H999');
 					const cell = a6csrqSheet.getCell( userRow, 5 );
 					const cellL = a6csrqSheet.getCell( userRow, 7 );
 					cell.value = Number(arg);
@@ -396,6 +397,7 @@
 							}
 						}
 					}
+					await a6csrqsSheet.loadCells('B2:H999');
 					const cell = a6csrqsSheet.getCell( userRow, 5 );
 					const cellL = a6csrqsSheet.getCell( userRow, 7 );
 					cell.value = Number(arg);
