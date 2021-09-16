@@ -369,17 +369,11 @@
 			if(command === "s") {
 				if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
-
 				var userName, userRow, ufound, lbFound;
 				var arg = args[0];
 				var args1 = message.content.slice(prefix.length).trim().match(/".+?"/g).map(str => str.replace(/"/g, ''));
 				var loca = args1[0];
-				var userID = message.member.id;
-				
-				console.log(arg);
-				console.log(loca);
-				console.log(userID);
-				
+				var userID = message.member.id;			
 				await playerData.loadCells('A2:B999');
 				for (let x = 0; x < playerData._cells.length; x++) {
 					if (playerData._cells[x] != undefined) {
