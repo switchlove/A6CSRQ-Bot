@@ -323,6 +323,8 @@
 			if(command === "ns") {
 				if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
+				if(!message.content.includes('"'))
+					return message.reply("please enclose the location in quotes! E.g. !ns/s \"Location\"");
 				var userName, userRow;
 				var arg = args[0];
 				var args1 = message.content.slice(prefix.length).trim().match(/".+?"/g).map(str => str.replace(/"/g, ''));
@@ -370,6 +372,8 @@
 			if(command === "s") {
 				if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
+				if(!message.content.includes('"'))
+					return message.reply("please enclose the location in quotes! E.g. !ns/s \"Location\"");
 				var userName, userRow, ufound, lbFound;
 				var arg = args[0];
 				var args1 = message.content.slice(prefix.length).trim().match(/".+?"/g).map(str => str.replace(/"/g, ''));
