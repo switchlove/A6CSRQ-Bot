@@ -170,8 +170,9 @@
 									const a5 = a6csrqsSheet.getCell(x, 5);
 									const a6 = a6csrqsSheet.getCell(x, 6);
 									const a7 = a6csrqsSheet.getCell(x, 7);
-									a1.formula = '=IF($F23 = "","",RANK($F23,$F$2:$F$94))';
-									a2.value = Number(x-1);
+									var y = x + 1;
+									a1.formula = '=IF($F' + y + ' = "","",RANK($F23,$F$2:$F$94))';
+									a2.value = Number(x);
 									a3.value = nameV;
 									a4.value = shinyV;
 									a5.value = Number(1);
