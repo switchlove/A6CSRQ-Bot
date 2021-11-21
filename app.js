@@ -104,6 +104,32 @@
 									if (a6csrqSheet._cells[x][3]._rawData.formattedValue == userName) {
 										userF = 1;
 										message.reply("it looks like your already registered! Trying to change your name? Try !namechange to update your name on the leaderboards! Otherwise please contact <@213488164826906624> to be manually added.");
+									} else {
+										var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ Player");
+										if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) ) {
+											message.member.roles.add(role).catch(console.error);
+										}
+										await a6csrqSheet.loadCells('B2:H999');
+										for (let x = 0; x < a6csrqSheet._cells.length; x++) {
+											if (a6csrqSheet._cells[x] != undefined) {
+												if (a6csrqSheet._cells[x][3]._rawData.formattedValue == undefined) {
+													const a2 = a6csrqSheet.getCell(x, 2);
+													const a3 = a6csrqSheet.getCell(x, 3);
+													const a4 = a6csrqSheet.getCell(x, 4);
+													const a5 = a6csrqSheet.getCell(x, 5);
+													const a6 = a6csrqSheet.getCell(x, 6);
+													const a7 = a6csrqSheet.getCell(x, 7);
+													a2.value = Number(x);
+													a3.value = userName;
+													a4.value = shinyV;
+													a5.value = Number(1);
+													a6.value = 'Kanto';
+													a7.value = 'Route 1';
+													await a6csrqSheet.saveUpdatedCells();
+													break;
+												}
+											}
+										}
 									}
 								}
 							}
@@ -116,6 +142,32 @@
 									if (a6csrqsSheet._cells[x][3]._rawData.formattedValue == userName) {
 										userF = 1;
 										message.reply("it looks like your already registered! Trying to change your name? Try !namechange to update your name on the leaderboards! Otherwise please contact <@213488164826906624> to be manually added.");
+									} else {
+										var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ-S Player");
+										if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) ) {
+											message.member.roles.add(role).catch(console.error);
+										}					
+										await a6csrqsSheet.loadCells('B2:H999');
+										for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
+											if (a6csrqsSheet._cells[x] != undefined) {
+												if (a6csrqsSheet._cells[x][3]._rawData.formattedValue == undefined) {
+													const a2 = a6csrqsSheet.getCell(x, 2);
+													const a3 = a6csrqsSheet.getCell(x, 3);
+													const a4 = a6csrqsSheet.getCell(x, 4);
+													const a5 = a6csrqsSheet.getCell(x, 5);
+													const a6 = a6csrqsSheet.getCell(x, 6);
+													const a7 = a6csrqsSheet.getCell(x, 7);
+													a2.value = Number(x);
+													a3.value = userName;
+													a4.value = shinyV;
+													a5.value = Number(1);
+													a6.value = 'Kanto';
+													a7.value = 'Route 1';
+													await a6csrqsSheet.saveUpdatedCells();
+													break;
+												}
+											}
+										}										
 									}
 								}
 							}
@@ -178,7 +230,7 @@
 						}
 					}
 				}
-				if (userF != 1) {
+				/*if (userF != 1) {
 					if (typeV == 'ns') {
 						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ Player");
 						if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) ) {
@@ -232,7 +284,7 @@
 							}
 						}
 					}					
-				}
+				}*/
 				if (typeV == 'ns') {
 					await a6csrqSheet.loadCells('B2:H999');
 					for (let x = 0; x < a6csrqSheet._cells.length; x++) {
