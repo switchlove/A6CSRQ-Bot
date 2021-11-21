@@ -142,7 +142,7 @@
 									const a6 = a6csrqSheet.getCell(x, 6);
 									const a7 = a6csrqSheet.getCell(x, 7);
 									a1.formula = '=IF($F54 = "","",RANK($F54,$F$2:$F$86))';
-									a1.value = '=IF($F54 = "","",RANK($F54,$F$2:$F$86))';
+									//a1.value = '=IF($F54 = "","",RANK($F54,$F$2:$F$86))';
 									a2.value = Number(x);
 									a3.value = nameV;
 									a4.value = shinyV;
