@@ -90,7 +90,6 @@
 					if (playerData._cells[x] != undefined) {
 						if (playerData._cells[x][1]._rawData.formattedValue == userV) {
 							userName = playerData._cells[x][0]._rawData.formattedValue;
-							console.log('Found: ' + playerData._cells[x][0]._rawData.formattedValue );
 							userE = 1;
 						}
 					}
