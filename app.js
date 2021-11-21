@@ -185,7 +185,8 @@
 						}
 					}
 				}
-				/*if (userF != 1) {
+				
+				if (userF != 1) {
 					if (typeV == 'ns') {
 						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ Player");
 						if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) ) {
@@ -195,12 +196,15 @@
 						for (let x = 0; x < a6csrqSheet._cells.length; x++) {
 							if (a6csrqSheet._cells[x] != undefined) {
 								if (a6csrqSheet._cells[x][3]._rawData.formattedValue == undefined) {
+									const a1 = a6csrqSheet.getCell(x, 1);
 									const a2 = a6csrqSheet.getCell(x, 2);
 									const a3 = a6csrqSheet.getCell(x, 3);
 									const a4 = a6csrqSheet.getCell(x, 4);
 									const a5 = a6csrqSheet.getCell(x, 5);
 									const a6 = a6csrqSheet.getCell(x, 6);
 									const a7 = a6csrqSheet.getCell(x, 7);
+									var y = x + 1;
+									a1.formula = '=IF($F' + y + ' = "","",RANK($F54,$F$2:$F$86))';
 									a2.value = Number(x);
 									a3.value = userName;
 									a4.value = shinyV;
@@ -221,12 +225,15 @@
 						for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
 							if (a6csrqsSheet._cells[x] != undefined) {
 								if (a6csrqsSheet._cells[x][3]._rawData.formattedValue == undefined) {
+									const a1 = a6csrqsSheet.getCell(x, 1);
 									const a2 = a6csrqsSheet.getCell(x, 2);
 									const a3 = a6csrqsSheet.getCell(x, 3);
 									const a4 = a6csrqsSheet.getCell(x, 4);
 									const a5 = a6csrqsSheet.getCell(x, 5);
 									const a6 = a6csrqsSheet.getCell(x, 6);
 									const a7 = a6csrqsSheet.getCell(x, 7);
+									var y = x + 1;
+									a1.formula = '=IF($F' + y + ' = "","",RANK($F23,$F$2:$F$94))';
 									a2.value = Number(x);
 									a3.value = userName;
 									a4.value = shinyV;
@@ -239,7 +246,8 @@
 							}
 						}
 					}					
-				}*/
+				}
+				
 				if (typeV == 'ns') {
 					await a6csrqSheet.loadCells('B2:H999');
 					for (let x = 0; x < a6csrqSheet._cells.length; x++) {
