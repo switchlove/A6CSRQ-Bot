@@ -504,7 +504,10 @@
 				if(!message.member.roles.cache.some(r=>["A6CSRQ Creator", "A6CSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
 				var roleArr = [];
-				message.guild.roles.forEach(role => roleArr.push(role.name); console.log(role.name, role.id););
+				message.guild.roles.forEach(role => {
+					roleArr.push(role.name);
+					console.log(role.name, role.id);
+				})
 				console.log(roleArr);
 			}
 		}
