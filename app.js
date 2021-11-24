@@ -508,6 +508,32 @@
 					roleArr.push(role.name);
 					console.log(role.name, role.id);
 				})
+				for( var i = 0; i < roleArr.length; i++){ 
+					if ( roleArr[i] === '@everyone') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'risk-taker') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'Bot') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'A6CSRQ Player') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'A6CSRQ-S Player') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'A6CSRQ Creator') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'A6CSRQ-S Creator') { 
+						arr.splice(i, 1); 
+					}
+					if ( roleArr[i] === 'Non-A6CSRQ Player') { 
+						arr.splice(i, 1); 
+					}
+				}
 				console.log(roleArr);
 			}
 		}
