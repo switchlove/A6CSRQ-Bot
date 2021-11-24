@@ -506,7 +506,6 @@
 				var roleArr = [];
 				message.guild.roles.cache.forEach(role => {
 					roleArr.push(role.name);
-					console.log(role.name, role.id);
 				})
 				for( var i = 0; i < roleArr.length; i++){ 
 					if ( roleArr[i] === '@everyone') { 
