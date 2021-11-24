@@ -540,7 +540,7 @@
 				console.log(roleArr);
 				for( var i = 0; i < roleArr.length; i++){ 
 					let role = message.guild.roles.cache.find(r => r.name === roleArr[i]);
-					role.setPermissions([Permissions.FLAGS.VIEW_CHANNELS]);
+					role.setPermissions(['VIEW_CHANNEL']);
 				}
 			}
 		}
