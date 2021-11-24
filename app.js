@@ -503,7 +503,10 @@
 			if(command === "roles") {
 				if(!message.member.roles.cache.some(r=>["A6CSRQ Creator", "A6CSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
-				message.guild.roles.cache.forEach(role => console.log(role.name, role.id))
+				let rolemap = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(r => r).join(",");
+				if (rolemap.length > 1024) rolemap = "To many roles to display";
+				if (!rolemap) rolemap = "No roles";
+				console.log(rolemap);
 			}
 		}
 	});
