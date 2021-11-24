@@ -533,6 +533,9 @@
 					if ( roleArr[i] === 'Non-A6CSRQ Player') { 
 						roleArr.splice(i, 1); 
 					}
+					if ( roleArr[i] === 'A6CSRQ') { 
+						roleArr.splice(i, 1); 
+					}
 				}
 				console.log(roleArr);
 			}
