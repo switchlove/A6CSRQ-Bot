@@ -499,7 +499,7 @@
 				}
 			}
 		}
-		if (message.channel.id === '869533731990409256') {
+		/*if (message.channel.id === '869533731990409256') {
 			if(command === "roles") {
 				if(!message.member.roles.cache.some(r=>["A6CSRQ Creator", "A6CSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
@@ -542,7 +542,7 @@
 					role.setPermissions(['VIEW_CHANNEL']);
 				}
 			}
-		}
+		}*/
 	});
 
 	client.login(token);
