@@ -21,7 +21,7 @@
 
 	var startTime = Date.now();
 	var currentTime = new Date().toLocaleTimeString();
-	
+
 	client.on("ready", () => {
 		console.log(`[ BOT ] : ${currentTime} : Logged in as ${client.user.tag}, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds!`);
 		console.log('------');
@@ -49,23 +49,23 @@
 		if(message.content.indexOf(prefix) !== 0) return;
 		const args = message.content.slice(prefix.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
-		
+
 		if (message.channel.id === process.env.channel) {
 			if(command === "help") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ Player", "A6CSRQ-S Player"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ Player", "ACSRQ-S Player"].includes(r.name)) )
 					return message.reply({"embed": {
-						"title": "Command Listing for A6CSRQ",
-						"description": "Here you can see the commands that you have access to with A6CSRQ!",
+						"title": "Command Listing for ACSRQ",
+						"description": "Here you can see the commands that you have access to with ACSRQ!",
 						"footer": { "text": "Have Issues or Concerns? Please use the !report command!" },
 						"color": Math.floor(Math.random() * 16777214) + 1,
 						"fields": [
 							{"name": "General","value": "!help - shows this message.\n!register s/ns \"NAME\" \"SHINY CODE\" - registers you with the leaderboard. NS for non-scripting, S for scripting. The name and shiny code pokemon must both be contained within quotes. E.g. !register ns \"Switch\" \"Pikachu\""},
 						]
 					}});
-				if(message.member.roles.cache.some(r=>["A6CSRQ Player", "A6CSRQ-S Player"].includes(r.name)) )
+				if(message.member.roles.cache.some(r=>["ACSRQ Player", "ACSRQ-S Player"].includes(r.name)) )
 					return message.reply({"embed": {
-						"title": "Command Listing for A6CSRQ",
-						"description": "Here you can see the commands that you have access to with A6CSRQ!",
+						"title": "Command Listing for ACSRQ",
+						"description": "Here you can see the commands that you have access to with ACSRQ!",
 						"footer": { "text": "Have Issues or Concerns? Please use the !report command!" },
 						"color": Math.floor(Math.random() * 16777214) + 1,
 						"fields": [
@@ -74,7 +74,7 @@
 						]
 					}});
 			}
-			
+
 			if(command === "register") {
 				if(!message.content.includes('"'))
 					return message.reply("please enclose your name and shiny code pokemon in quotes! E.g. !register s/ns \"NAME\" \"SHINY CODE\"");
@@ -84,7 +84,7 @@
 				var typeV = args[0];
 				var nameV = args1[0];
 				var shinyV = args1[1];
-				
+
 				await playerData.loadCells('A2:B999');
 				for (let x = 0; x < playerData._cells.length; x++) {
 					if (playerData._cells[x] != undefined) {
@@ -125,8 +125,8 @@
 					userF = 1;
 					const newUser = await playerData.addRow([nameV, userV]);
 					if (typeV == 'ns') {
-						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ Player");
-						if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) ) {
+						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ Player");
+						if(!message.member.roles.cache.some(r=>["ACSRQ Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
 						}
 						await a6csrqSheet.loadCells('B2:H999');
@@ -154,10 +154,10 @@
 							}
 						}
 					} else if (typeV == 's') {
-						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ-S Player");
-						if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) ) {
+						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ-S Player");
+						if(!message.member.roles.cache.some(r=>["ACSRQ-S Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
-						}					
+						}
 						await a6csrqsSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
 							if (a6csrqsSheet._cells[x] != undefined) {
@@ -184,11 +184,11 @@
 						}
 					}
 				}
-				
+
 				if (userF != 1) {
 					if (typeV == 'ns') {
-						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ Player");
-						if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) ) {
+						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ Player");
+						if(!message.member.roles.cache.some(r=>["ACSRQ Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
 						}
 						await a6csrqSheet.loadCells('B2:H999');
@@ -216,10 +216,10 @@
 							}
 						}
 					} else if (typeV == 's') {
-						var role = message.guild.roles.cache.find(r => r.name === "A6CSRQ-S Player");
-						if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) ) {
+						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ-S Player");
+						if(!message.member.roles.cache.some(r=>["ACSRQ-S Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
-						}					
+						}
 						await a6csrqsSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
 							if (a6csrqsSheet._cells[x] != undefined) {
@@ -244,9 +244,9 @@
 								}
 							}
 						}
-					}					
+					}
 				}
-				
+
 				if (typeV == 'ns') {
 					await a6csrqSheet.loadCells('B2:H999');
 					for (let x = 0; x < a6csrqSheet._cells.length; x++) {
@@ -283,9 +283,9 @@
 					}
 				}
 			}
-			
+
 			if(command === "namechange") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ Player", "A6CSRQ-S Player"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ Player", "ACSRQ-S Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
 				if(!message.content.includes('"'))
 					return message.reply("please enclose your new name in quotes! E.g. !namechange \"new name\"");
@@ -293,7 +293,7 @@
 				var args1 = message.content.slice(prefix.length).trim().match(/".+?"/g).map(str => str.replace(/"/g, ''));
 				var newName = args1[0];
 				var curName, uFound;
-				
+
 				await playerData.loadCells('A2:B999');
 				for (let x = 0; x < playerData._cells.length; x++) {
 					if (playerData._cells[x] != undefined) {
@@ -325,7 +325,7 @@
 							}
 							uFound = 1;
 							message.react("👍");
-						} 
+						}
 					}
 				}
 				if (uFound != 1) {
@@ -333,9 +333,9 @@
 					message.reply("I couldn't find you! Please use the !register command to add yourself to the leaderboard!");
 				}
 			}
-			
+
 			if(command === "ns") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ Player"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
 				if(!message.content.includes('"'))
 					return message.reply("please enclose the location in quotes! E.g. !ns/s \"Location\"");
@@ -382,9 +382,9 @@
 					}
 				}
 			}
-			
+
 			if(command === "s") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ-S Player"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ-S Player"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this! Make sure that you've ran the !register command!");
 				if(!message.content.includes('"'))
 					return message.reply("please enclose the location in quotes! E.g. !ns/s \"Location\"");
@@ -392,7 +392,7 @@
 				var arg = args[0];
 				var args1 = message.content.slice(prefix.length).trim().match(/".+?"/g).map(str => str.replace(/"/g, ''));
 				var loca = args1[0];
-				var userID = message.member.id;			
+				var userID = message.member.id;
 				await playerData.loadCells('A2:B999');
 				for (let x = 0; x < playerData._cells.length; x++) {
 					if (playerData._cells[x] != undefined) {
@@ -421,7 +421,7 @@
 					cell.value = Number(arg);
 					cellL.value = loca;
 					await a6csrqsSheet.saveUpdatedCells();
-					await a6csrqsSheet.loadCells('B2:H999');					
+					await a6csrqsSheet.loadCells('B2:H999');
 					if (a6csrqsSheet._cells[userRow][5]._rawData.formattedValue == arg && a6csrqsSheet._cells[userRow][7]._rawData.formattedValue == loca) {
 						message.react("👍");
 					} else {
@@ -430,9 +430,9 @@
 					}
 				}
 			}
-			
+
 			if(command === "remove") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ Creator", "A6CSRQ-S Creator"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ Creator", "ACSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
 				if(!message.content.includes('"'))
 					return message.reply("please enclose the name in quotes! E.g. !remove s/ns \"NAME\"");
@@ -501,42 +501,42 @@
 		}
 		/*if (message.channel.id === '869533731990409256') {
 			if(command === "roles") {
-				if(!message.member.roles.cache.some(r=>["A6CSRQ Creator", "A6CSRQ-S Creator"].includes(r.name)) )
+				if(!message.member.roles.cache.some(r=>["ACSRQ Creator", "ACSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
 				var roleArr = [];
 				message.guild.roles.cache.forEach(role => {
 					roleArr.push(role.name);
 				})
-				for( var i = 0; i < roleArr.length; i++){ 
-					if ( roleArr[i] === '@everyone') { 
-						roleArr.splice(i, 1); 
+				for( var i = 0; i < roleArr.length; i++){
+					if ( roleArr[i] === '@everyone') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'risk-taker') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'risk-taker') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'Bot') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'Bot') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'A6CSRQ Player') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'ACSRQ Player') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'A6CSRQ-S Player') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'ACSRQ-S Player') { 
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'A6CSRQ Creator') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'ACSRQ Creator') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'A6CSRQ-S Creator') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'ACSRQ-S Creator') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'Non-A6CSRQ Player') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'Non-ACSRQ Player') {
+						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'A6CSRQ') { 
-						roleArr.splice(i, 1); 
+					if ( roleArr[i] === 'ACSRQ') {
+						roleArr.splice(i, 1);
 					}
 				}
-				for( var i = 0; i < roleArr.length; i++){ 
+				for( var i = 0; i < roleArr.length; i++){
 					console.log(roleArr[i]);
 					let role = message.guild.roles.cache.find(r => r.name === roleArr[i]);
 					role.setPermissions(['VIEW_CHANNEL']);
