@@ -499,7 +499,7 @@
 				}
 			}
 		}
-		/*if (message.channel.id === '869533731990409256') {
+		if (message.channel.id === '869533731990409256') {
 			if(command === "roles") {
 				if(!message.member.roles.cache.some(r=>["ACSRQ Creator", "ACSRQ-S Creator"].includes(r.name)) )
 					return message.reply("you don't have permissions to use this!");
@@ -520,7 +520,7 @@
 					if ( roleArr[i] === 'ACSRQ Player') {
 						roleArr.splice(i, 1);
 					}
-					if ( roleArr[i] === 'ACSRQ-S Player') { 
+					if ( roleArr[i] === 'ACSRQ-S Player') {
 						roleArr.splice(i, 1);
 					}
 					if ( roleArr[i] === 'ACSRQ Creator') {
@@ -542,7 +542,7 @@
 					role.setPermissions(['VIEW_CHANNEL']);
 				}
 			}
-		}*/
+		}
 	});
 
 	client.login(token);
