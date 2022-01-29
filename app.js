@@ -129,6 +129,10 @@
 						if(!message.member.roles.cache.some(r=>["ACSRQ Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
 						}
+						var role1 = message.guild.roles.cache.find(r => r.name === "Route Roamer");
+						if(!message.member.roles.cache.some(r=>["Route Roamer"].includes(r.name)) ) {
+							message.member.roles.add(role1).catch(console.error);
+						}
 						await a6csrqSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqSheet._cells.length; x++) {
 							if (a6csrqSheet._cells[x] != undefined) {
@@ -157,6 +161,10 @@
 						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ-S Player");
 						if(!message.member.roles.cache.some(r=>["ACSRQ-S Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
+						}
+						var role1 = message.guild.roles.cache.find(r => r.name === "Route Roamer");
+						if(!message.member.roles.cache.some(r=>["Route Roamer"].includes(r.name)) ) {
+							message.member.roles.add(role1).catch(console.error);
 						}
 						await a6csrqsSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
@@ -191,6 +199,10 @@
 						if(!message.member.roles.cache.some(r=>["ACSRQ Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
 						}
+						var role1 = message.guild.roles.cache.find(r => r.name === "Route Roamer");
+						if(!message.member.roles.cache.some(r=>["Route Roamer"].includes(r.name)) ) {
+							message.member.roles.add(role1).catch(console.error);
+						}
 						await a6csrqSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqSheet._cells.length; x++) {
 							if (a6csrqSheet._cells[x] != undefined) {
@@ -219,6 +231,10 @@
 						var role = message.guild.roles.cache.find(r => r.name === "ACSRQ-S Player");
 						if(!message.member.roles.cache.some(r=>["ACSRQ-S Player"].includes(r.name)) ) {
 							message.member.roles.add(role).catch(console.error);
+						}
+						var role1 = message.guild.roles.cache.find(r => r.name === "Route Roamer");
+						if(!message.member.roles.cache.some(r=>["Route Roamer"].includes(r.name)) ) {
+							message.member.roles.add(role1).catch(console.error);
 						}
 						await a6csrqsSheet.loadCells('B2:H999');
 						for (let x = 0; x < a6csrqsSheet._cells.length; x++) {
@@ -499,6 +515,7 @@
 				}
 			}
 		}
+
 		if (message.channel.id === '869533731990409256') {
 			if(command === "roles") {
 				if(!message.member.roles.cache.some(r=>["ACSRQ Creator", "ACSRQ-S Creator"].includes(r.name)) )
