@@ -516,6 +516,11 @@
 			}
 		}
 
+		//if (message.channel.id === '936115387102277705') {
+		if (message.channel.id === '869533731990409256') {
+			console.log( message.author );
+		}
+
 		if (message.channel.id === '869533731990409256') {
 			if(command === "roles") {
 				if(!message.member.roles.cache.some(r=>["ACSRQ Creator", "ACSRQ-S Creator"].includes(r.name)) )
