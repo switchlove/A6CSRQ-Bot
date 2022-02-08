@@ -563,4 +563,4 @@
 	});
 
 	client.login(token);
-}());
+}()); 
