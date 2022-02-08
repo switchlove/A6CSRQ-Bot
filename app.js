@@ -45,6 +45,11 @@
 	});
 
 	client.on("message", async message => {
+		//if (message.channel.id === '936115387102277705') {
+		if (message.channel.id === '869533731990409256') {
+			console.log(message)
+		}
+
 		if(message.author.bot) return;
 		if(message.content.indexOf(prefix) !== 0) return;
 		const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -514,11 +519,6 @@
 					}
 				}
 			}
-		}
-
-		//if (message.channel.id === '936115387102277705') {
-		if (message.channel.id === '869533731990409256') {
-      console.log(message)
 		}
 
 		if (message.channel.id === '869533731990409256') {
