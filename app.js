@@ -516,13 +516,9 @@
 			}
 		}
 
-		if (message.channel.id === '936115387102277705') {
-			message.channel.fetchMessages({ limit: 1 }).then(messages => {
-        const lastMessage = messages.first()
-        console.log(lastMessage)
-      }).catch(err => {
-        console.error(err)
-      })
+		//if (message.channel.id === '936115387102277705') {
+		if (message.channel.id === '869533731990409256') {
+      console.log(message)
 		}
 
 		if (message.channel.id === '869533731990409256') {
